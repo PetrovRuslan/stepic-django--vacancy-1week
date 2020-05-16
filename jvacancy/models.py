@@ -5,8 +5,8 @@ from django.db import models
 class Vacancy(models.Model):
 	id = models.AutoField(primary_key=True)
 	title = models.CharField(max_length=64)
-	specialty = models.ForeignKey(Specialty, on_delete=models.CASCADE, related_name='vacancies')
-	company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='vacancies')
+	specialty = models.ForeignKey('Specialty', on_delete=models.CASCADE, related_name='vacancies')
+	company = models.ForeignKey('Company', on_delete=models.CASCADE, related_name='vacancies')
 	skills = models.CharField(max_length=64)
 	description = models.CharField(max_length=256)
 	salary_min = models.IntegerField()
